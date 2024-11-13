@@ -1,5 +1,5 @@
 {
-  "name": "rocket-ui",
+  "name": "rocket-ui-dev-version",
   "version": "0.0.1",
   "scripts": {
     "test": "jest",

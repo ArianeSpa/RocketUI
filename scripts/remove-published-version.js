@@ -20,13 +20,13 @@ inquirer.prompt(question).then((answers) => {
     .prompt([
       {
         name: "confirm",
-        message: `Do you really want to unpublish rocket-ui@${answers.version} ? `,
+        message: `Do you really want to unpublish rocket-ui-dev-version@${answers.version} ? `,
         type: "confirm",
       },
     ])
     .then((confirmAnswers) => {
       if (confirmAnswers.confirm) {
-        execSync(`npm unpublish react-lib-ui-test@${answers.version}`, {
+        execSync(`npm unpublish rocket-ui-dev-version@${answers.version}`, {
           stdio: "inherit",
         });
       }
