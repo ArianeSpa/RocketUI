@@ -2,7 +2,6 @@
   "name": "rocket-ui-dev-version",
   "version": "0.0.1",
   "author": "",
-  "license": "ISC",
   "description": "Rocket UI library built from styled-components",
   "homepage": "https://github.com/ArianeSpa/RocketUI#readme",
   "bugs": {
