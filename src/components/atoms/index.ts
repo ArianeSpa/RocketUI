@@ -5,3 +5,5 @@
  * Atoms essentially translate elements of the graphic identity of the product.
  * An atom can be, for example, a logo, a typo, html tags...
  */
+
+export * from "./FakeAtom";
