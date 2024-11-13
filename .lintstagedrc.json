@@ -1,0 +1,5 @@
+{
+  "src/**/*.{ts,tsx}": ["bash -c tsc"],
+  "*.{ts,tsx}": ["eslint --fix"],
+  "*.{ts,tsx,json,css,scss,md,mdx}": ["prettier --write"]
+}
