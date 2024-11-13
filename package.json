@@ -1,6 +1,32 @@
 {
   "name": "rocket-ui-dev-version",
   "version": "0.0.1",
+  "author": "",
+  "license": "ISC",
+  "description": "Rocket UI library built from styled-components",
+  "homepage": "https://github.com/ArianeSpa/RocketUI#readme",
+  "bugs": {
+    "url": "https://github.com/ArianeSpa/RocketUI/issues"
+  },
+  "keywords": [
+    "react",
+    "typescript",
+    "storybook",
+    "styled-components",
+    "rollup",
+    "jest",
+    "eslint",
+    "lint-staged",
+    "prettier",
+    "husky"
+  ],
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/types.d.ts",
+  "engines": {
+    "node": "20.13.0",
+    "npm": "10.5.2"
+  },
   "scripts": {
     "test": "jest",
     "rollup": "rollup -c --bundleConfigAsCjs",
@@ -11,12 +37,6 @@
     "lint-staged": "lint-staged",
     "prepare": "husky && npm run rollup"
   },
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
-  "types": "dist/types.d.ts",
   "devDependencies": {
     "@babel/core": "^7.26.0",
     "@babel/preset-env": "^7.26.0",
