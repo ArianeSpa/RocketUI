@@ -10,19 +10,7 @@ import {
   secondary,
   success,
   warning,
-  type Palette,
 } from '../palettes';
-
-export type ThemeProps = {
-  colors?: any;
-  gradients?: any;
-  palette: Palette;
-  gutter?: {
-    type?: 'px' | 'em';
-    size?: number;
-  };
-  roundness?: number;
-};
 
 export const defaultTheme = {
   palette: {
@@ -46,5 +34,4 @@ export type DefaultTheme = typeof defaultTheme;
 export const useTheme = useStyledTheme as () => DefaultTheme;
 
 export type PaletteThemeKeys = DeepNestedKeyOf<DefaultTheme['palette']>;
-export type ColorThemeKeys = DeepNestedKeyOf<ThemeProps['colors']>;
-export type GradienthemeKeys = DeepNestedKeyOf<ThemeProps['gradients']>;
+// export type GradienthemeKeys = DeepNestedKeyOf<DefaultTheme['gradients']>;

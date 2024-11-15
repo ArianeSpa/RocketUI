@@ -4,10 +4,10 @@ import { merge } from 'lodash';
 import { ThemeProvider } from 'styled-components';
 
 // === Import : LOCAL
-import { defaultTheme, ThemeProps } from '../theme';
+import { DefaultTheme, defaultTheme } from '../theme';
 
 interface ThemeProviderProps {
-  theme?: ThemeProps;
+  theme?: DefaultTheme;
   children?: React.ReactNode;
 }
 

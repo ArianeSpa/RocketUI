@@ -31,7 +31,7 @@ export const StyledTypo = styled.span.withConfig(
   display: var(--display);
 
   --color: ${({ theme, color }: StyledTypoProps) => {
-    if (color) return get(theme?.colors, color, color);
+    if (color) return get(theme?.palette, color, color);
     return 'currentColor';
   }};
   color: var(--color);

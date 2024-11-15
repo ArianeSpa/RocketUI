@@ -1,8 +1,8 @@
-import { ThemeProps } from '../theme/theme';
+import { DefaultTheme } from '../theme/theme';
 
 type GetGutterDefProps = {
   value: number;
-  theme?: ThemeProps;
+  theme?: DefaultTheme;
 };
 const getGutterValue = ({ theme, value }: GetGutterDefProps) => {
   switch (theme?.gutter?.type) {

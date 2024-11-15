@@ -4,9 +4,9 @@ import { CSSProperties } from 'styled-components';
 
 // === Import : LOCAL
 import {
+  DefaultTheme,
   GetGuttersProps,
   PaletteThemeKeys,
-  ThemeProps,
 } from '../../../theming';
 
 export interface StyledTypoProps
@@ -66,7 +66,7 @@ export interface StyledTypoProps
    * Or default theme if the app is wrapped in RocketThemeProvider
    * @default undefined
    */
-  theme?: ThemeProps;
+  theme?: DefaultTheme;
 
   /**
    * @todo ajouter variant
