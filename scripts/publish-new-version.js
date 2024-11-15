@@ -33,8 +33,7 @@ const getVersionTypeIncrement = async () => {
 };
 
 const incrementAndPublish = async answers => {
-  const incrementType = getVersionTypeIncrement();
-
+  const incrementType = await getVersionTypeIncrement();
   const newVersion = semver.inc(originalVersion, incrementType);
   packageJson.version = newVersion;
   fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2));
