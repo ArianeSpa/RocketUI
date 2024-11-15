@@ -1,6 +1,6 @@
 {
   "name": "rocket-ui-dev-version",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "author": "",
   "description": "Rocket UI library built from styled-components",
   "homepage": "https://github.com/ArianeSpa/RocketUI#readme",
@@ -78,7 +78,6 @@
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
     "lint-staged": "^15.2.10",
-    "lodash": "^4.17.21",
     "prettier": "^3.3.3",
     "rollup": "^4.25.0",
     "rollup-plugin-dts": "^6.1.1",
@@ -97,5 +96,8 @@
   "files": [
     "dist",
     "README.md"
-  ]
+  ],
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
 }
