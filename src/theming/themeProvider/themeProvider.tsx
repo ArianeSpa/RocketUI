@@ -1,5 +1,5 @@
 // === Import : NPM
-import React, { createContext, useContext } from 'react';
+import React from 'react';
 import { merge } from 'lodash';
 import { ThemeProvider } from 'styled-components';
 
@@ -10,9 +10,6 @@ interface ThemeProviderProps {
   theme?: ThemeProps;
   children?: React.ReactNode;
 }
-
-const ThemeContext = createContext(defaultTheme);
-export const useTheme = () => useContext(ThemeContext) ?? defaultTheme;
 
 export const RocketThemeProvider: React.FC<ThemeProviderProps> = props => {
   return (

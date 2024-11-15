@@ -1,4 +1,6 @@
-import { DeepNestedKeyOf, DeepPartial } from '../../lib';
+import { useTheme as useStyledTheme } from 'styled-components';
+
+import { DeepNestedKeyOf } from '../../lib';
 import {
   error,
   info,
@@ -22,7 +24,7 @@ export type ThemeProps = {
   roundness?: number;
 };
 
-export const defaultTheme: ThemeProps = {
+export const defaultTheme = {
   palette: {
     primary,
     secondary,
@@ -40,6 +42,9 @@ export const defaultTheme: ThemeProps = {
   roundness: 4,
 };
 
-export type PaletteThemeKeys = DeepNestedKeyOf<ThemeProps['palette']>;
-export type ColorThemeKeys = DeepPartial<ThemeProps['colors']>;
+export type DefaultTheme = typeof defaultTheme;
+export const useTheme = useStyledTheme as () => DefaultTheme;
+
+export type PaletteThemeKeys = DeepNestedKeyOf<DefaultTheme['palette']>;
+export type ColorThemeKeys = DeepNestedKeyOf<ThemeProps['colors']>;
 export type GradienthemeKeys = DeepNestedKeyOf<ThemeProps['gradients']>;
