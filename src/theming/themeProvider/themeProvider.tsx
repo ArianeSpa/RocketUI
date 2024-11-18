@@ -4,17 +4,19 @@ import { merge } from 'lodash';
 import { ThemeProvider } from 'styled-components';
 
 // === Import : LOCAL
-import { DefaultTheme, defaultTheme } from '../theme';
+import { ThemeProps, defaultTheme } from '../theme';
 
 interface ThemeProviderProps {
-  theme?: DefaultTheme;
   children?: React.ReactNode;
+  disableDefaultTheme?: boolean;
+  theme?: ThemeProps;
 }
 
 export const RocketThemeProvider: React.FC<ThemeProviderProps> = props => {
-  return (
-    <ThemeProvider theme={merge(defaultTheme, props.theme)}>
-      {props.children}
-    </ThemeProvider>
-  );
+  const { children, disableDefaultTheme = false, theme } = props;
+
+  const providedTheme =
+    disableDefaultTheme && theme ? theme : merge(defaultTheme, theme);
+
+  return <ThemeProvider theme={providedTheme}>{children}</ThemeProvider>;
 };

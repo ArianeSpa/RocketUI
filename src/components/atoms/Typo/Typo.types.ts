@@ -3,14 +3,11 @@ import { HTMLAttributes } from 'react';
 import { CSSProperties } from 'styled-components';
 
 // === Import : LOCAL
-import {
-  DefaultTheme,
-  GetGuttersProps,
-  PaletteThemeKeys,
-} from '../../../theming';
+import { Theme, PaletteThemeKeys } from '../../../theming';
+import { GetGuttersProps } from '../../../lib';
 
 export interface StyledTypoProps
-  extends HTMLAttributes<HTMLBaseElement>,
+  extends Omit<HTMLAttributes<HTMLBaseElement>, 'color'>,
     GetGuttersProps {
   /**
    * Set the text-align of the component.
@@ -66,7 +63,7 @@ export interface StyledTypoProps
    * Or default theme if the app is wrapped in RocketThemeProvider
    * @default undefined
    */
-  theme?: DefaultTheme;
+  theme?: Theme;
 
   /**
    * @todo ajouter variant

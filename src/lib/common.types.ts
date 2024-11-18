@@ -9,3 +9,7 @@ export type DeepNestedKeyOf<ObjectType extends object> = {
     ? `${Key}.${NestedKeyOf<ObjectType[Key]>}`
     : `${Key}`;
 }[keyof ObjectType & string];
+
+export type DeepPartial<T> = {
+  [P in keyof T]?: T[P] extends object ? DeepPartial<T[P]> : T[P];
+};

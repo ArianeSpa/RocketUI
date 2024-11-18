@@ -1,5 +1,5 @@
-export * from './gutters';
+export * from './gutters/gutters';
 export * from './ellipsis';
-export * from './palettes';
+export * from './palette/palette';
 export * from './theme';
 export * from './themeProvider';

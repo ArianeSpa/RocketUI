@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import { get } from 'lodash';
 
 // === Import : LOCAL
-import { getConfig } from '../../../lib';
-import { getEllipsis, getGutters } from '../../../theming';
+import { getConfig, getGutters } from '../../../lib';
+import { getEllipsis } from '../../../theming';
 import { StyledTypoProps } from './Typo.types';
 
 export const StyledTypo = styled.span.withConfig(
@@ -22,13 +22,12 @@ export const StyledTypo = styled.span.withConfig(
   // Force margin, if as="h1" is passed, native html tag h1 has margin-bottom
   margin: 0;
 
-  --display: ${({ display, noWrap, width }: StyledTypoProps) => {
-    if (display) return display;
-    if (noWrap) return 'block';
-    if (width) return 'inline-block';
-    return 'inline';
+  ${({ display, noWrap, width }: StyledTypoProps) => {
+    if (display) return `display: ${display};`;
+    if (noWrap) return 'display: block;';
+    if (width) return 'display: inline-block;';
+    return undefined;
   }};
-  display: var(--display);
 
   --color: ${({ theme, color }: StyledTypoProps) => {
     if (color) return get(theme?.palette, color, color);
