@@ -1,1 +1,2 @@
-export * from './Typo';
+export { Typo } from './Typo';
+export type { TypoProps } from './Typo.types';

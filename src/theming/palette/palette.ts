@@ -1,4 +1,4 @@
-import { DeepPartial } from '../../lib/common.types';
+import { DeepPartial } from '../_utils/types';
 import { error } from './error/error';
 import { info } from './info/info';
 import { neutral } from './neutral/neutral';

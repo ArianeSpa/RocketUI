@@ -1,3 +1,2 @@
-export * from './common.types';
-export * from './get-gutters';
-export * from './styled-components.config';
+export * from './styles/_index';
+export * from './types/_index';

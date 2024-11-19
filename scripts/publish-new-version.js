@@ -17,34 +17,46 @@ const incrementLevels = [
   'prepatch',
 ];
 
+const tags = ['latest', 'dev'];
+
 const questions = [
   {
-    name: 'type',
+    name: 'increment',
     describe: 'Select the increment type',
     type: 'list',
     choices: incrementLevels,
     default: 'patch',
   },
+  {
+    name: 'tag',
+    describe: 'Select the tag',
+    type: 'list',
+    choices: tags,
+    default: 'dev',
+  },
 ];
 
 const getVersionTypeIncrement = async () => {
   const answers = await inquirer.prompt(questions);
-  return answers.type;
+  return { incrementType: answers.increment, publishTag: answers.tag };
 };
 
 const incrementAndPublish = async answers => {
-  const incrementType = await getVersionTypeIncrement();
+  const { incrementType, publishTag } = await getVersionTypeIncrement();
   const newVersion = semver.inc(originalVersion, incrementType);
   packageJson.version = newVersion;
   fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2));
 
-  exec('npm publish --access public --tag dev', (error, stdout, stderr) => {
-    if (error) {
-      console.error(`Error publishing v${newVersion}: ${error.message}`);
-    } else {
-      console.log(stdout);
+  exec(
+    `npm publish --access public --tag ${publishTag}`,
+    (error, stdout, stderr) => {
+      if (error) {
+        console.error(`Error publishing v${newVersion}: ${error.message}`);
+      } else {
+        console.log(stdout);
+      }
     }
-  });
+  );
 };
 
 incrementAndPublish();

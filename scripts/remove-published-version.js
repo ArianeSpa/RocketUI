@@ -12,7 +12,7 @@ const versionQuestion = [
 const getConfirmationQuestion = version => [
   {
     name: 'confirm',
-    message: `Do you really want to unpublish rocket-ui-dev-version@${version} ? `,
+    message: `Do you really want to unpublish react-rocket-ui@${version} ? `,
     type: 'confirm',
   },
 ];
@@ -33,7 +33,7 @@ const getVersionToUnpublish = async () => {
   const { confirm } = await inquirer.prompt(confirmQuestion);
   if (confirm) {
     exec(
-      `npm unpublish rocket-ui-dev-version@${version}`,
+      `npm unpublish react-rocket-ui@${version}`,
       (error, stdout, stderr) => {
         if (error) {
           console.error(`Error unpublishing v${version}: ${error.message}`);
