@@ -1,4 +1,7 @@
+// === Import : NPM
 import { CSSProperties } from 'styled-components';
+
+// === Import : Local
 import { NestedKeyOf } from '../_utils/types';
 
 export type FontDefinitionProps = {
@@ -11,18 +14,7 @@ export type FontDefinitionProps = {
   lineHeight?: CSSProperties['lineHeight'];
 };
 
-export type FontThemeProps = {
-  h1?: FontDefinitionProps;
-  h2?: FontDefinitionProps;
-  h3?: FontDefinitionProps;
-  h4?: FontDefinitionProps;
-  h5?: FontDefinitionProps;
-  h6?: FontDefinitionProps;
-  body?: FontDefinitionProps;
-  subtitle?: FontDefinitionProps;
-  button?: FontDefinitionProps;
-};
-
+export type FontThemeProps = { [key: string]: FontDefinitionProps };
 export type FontThemeKeys = NestedKeyOf<FontThemeProps>;
 export const defaultFonts: FontThemeProps = {
   h1: {
