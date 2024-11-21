@@ -23,8 +23,8 @@ export type GetHeightWidthProps = {
   fullHeight?: boolean;
 };
 export const getHeightWidth = (props: GetHeightWidthProps) => {
-  if (!props) return;
   const { height, fullHeight, width, fullWidth } = props;
+  if (!height && !fullHeight && !width && !fullWidth) return;
 
   const heightStyle =
     fullHeight || height
