@@ -2,17 +2,17 @@
 import { get, merge } from 'lodash';
 
 // === Import : LOCAL
-import { Theme, FontDefinitionProps, FontThemeKeys } from '../../theming';
+import { Theme, FontDefinitionProps, FontThemeKeys } from '../../../theming';
 
 const getFontDefinition = (props: FontDefinitionProps) => {
   const {
-    fontFamily = '',
-    fontSize = '',
-    fontStretch = '',
-    fontStyle = '',
-    fontVariant = '',
-    fontWeight = '',
-    lineHeight = '',
+    fontFamily,
+    fontSize,
+    fontStretch,
+    fontStyle,
+    fontVariant,
+    fontWeight,
+    lineHeight,
   } = props;
   const fontDefinition = [];
 
