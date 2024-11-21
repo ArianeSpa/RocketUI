@@ -1,4 +1,4 @@
-type GetConfigOptionsProps =
+export type GetConfigOptionsProps =
   | 'getColor'
   | 'getEllipsis'
   | 'getFont'
@@ -51,7 +51,7 @@ export const getConfig = (props: GetConfigProps) => {
         ];
 
       default:
-        return [...list, option];
+        return [...list];
     }
   }, [] as string[]);
   const finalList = [...keys, ...optionKeys];

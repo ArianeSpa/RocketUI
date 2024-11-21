@@ -10,7 +10,7 @@ import {
   getHeightWidth,
 } from '../../../lib';
 import { StyledTypoProps } from './Typo.types';
-import { getConfig } from '../../_utils/_index';
+import { getConfig } from '../../_utils';
 
 export const StyledTypo = styled.span.withConfig(
   getConfig({

@@ -28,6 +28,7 @@
   },
   "scripts": {
     "test": "jest",
+    "test:coverage": "jest  --coverage",
     "test:file": "node ./scripts/test-specific-file-coverage.js",
     "rollup": "rollup -c --bundleConfigAsCjs",
     "storybook": "storybook dev -p 6006",
