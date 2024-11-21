@@ -3,7 +3,7 @@ import { defaultGutters, GutterThemeProps } from '../gutters/gutters';
 import { defaultPalette, PaletteThemeKeys } from '../palette/palette';
 
 export type ThemeProps = {
-  palette: PaletteThemeKeys;
+  palette?: PaletteThemeKeys;
   gutter?: GutterThemeProps;
   fonts?: FontThemeProps;
   roundness?: number | string;

@@ -1,9 +1,14 @@
+export enum GutterUnitEnum {
+  EM = 'em',
+  PX = 'px',
+}
+
 export type GutterThemeProps = {
-  type?: 'em' | 'px';
+  unit?: GutterUnitEnum;
   size?: number;
 };
 
 export const defaultGutters: GutterThemeProps = {
-  type: 'em',
+  unit: GutterUnitEnum.EM,
   size: 0.25,
 };
