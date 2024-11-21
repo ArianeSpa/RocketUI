@@ -58,13 +58,13 @@ If you're working on multiple projects, it is recommended to use NVM which is th
 Install the component library
 
 ```sh
-npm install rocket-ui
+npm install react-rocket-ui
 ```
 
 You can specify a specific version if needed
 
 ```sh
-npm install rocket-ui@1.0.0
+npm install react-rocket-ui@1.0.1
 ```
 
 Peerdependencies are automatically installed.
@@ -76,7 +76,7 @@ Peerdependencies are automatically installed.
 <br>
 
 ```tsx
-import { Button } from 'rocket-ui';
+import { Button } from 'react-rocket-ui';
 
 <Button onClick={handleClick}>Click</Button>;
 ```
@@ -84,7 +84,7 @@ import { Button } from 'rocket-ui';
 You can also wrap your application in the RocketThemeProvider to pass your custom theme instead of using the default theme
 
 ```tsx
-import { RocketThemeProvider } from 'rocket-ui';
+import { RocketThemeProvider } from 'react-rocket-ui';
 
 <RocketThemeProvider theme={myCustomTheme}>
   // ... My App Content

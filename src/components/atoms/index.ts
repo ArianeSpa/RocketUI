@@ -6,4 +6,4 @@
  * An atom can be, for example, a logo, a typo, html tags...
  */
 
-export * from './FakeAtom';
+export * from './Typo';

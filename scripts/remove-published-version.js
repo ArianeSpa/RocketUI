@@ -1,7 +1,7 @@
 const inquirer = require('inquirer');
-const { execSync } = require('child_process');
+const { exec } = require('child_process');
 
-const question = [
+const versionQuestion = [
   {
     name: 'version',
     message:
@@ -9,26 +9,40 @@ const question = [
   },
 ];
 
-inquirer.prompt(question).then(answers => {
-  const isValid = RegExp(/\d*\.\d*\.\d*/gm).exec(answers.version);
+const getConfirmationQuestion = version => [
+  {
+    name: 'confirm',
+    message: `Do you really want to unpublish react-rocket-ui@${version} ? `,
+    type: 'confirm',
+  },
+];
+
+const checkVersionFormat = version => {
+  const isValid = RegExp(/\d*\.\d*\.\d*/gm).exec(version);
   if (!isValid) {
     return console.log(
       'Wrong format, version must be x.x.x for example 1.20.3'
     );
   }
-  inquirer
-    .prompt([
-      {
-        name: 'confirm',
-        message: `Do you really want to unpublish rocket-ui-dev-version@${answers.version} ? `,
-        type: 'confirm',
-      },
-    ])
-    .then(confirmAnswers => {
-      if (confirmAnswers.confirm) {
-        execSync(`npm unpublish rocket-ui-dev-version@${answers.version}`, {
-          stdio: 'inherit',
-        });
+};
+
+const getVersionToUnpublish = async () => {
+  const { version } = await inquirer.prompt(versionQuestion);
+  checkVersionFormat(versions);
+  const confirmQuestion = getConfirmationQuestion(version);
+  const { confirm } = await inquirer.prompt(confirmQuestion);
+  if (confirm) {
+    exec(
+      `npm unpublish react-rocket-ui@${version}`,
+      (error, stdout, stderr) => {
+        if (error) {
+          console.error(`Error unpublishing v${version}: ${error.message}`);
+        } else {
+          console.log(stdout);
+        }
       }
-    });
-});
+    );
+  }
+};
+
+getVersionToUnpublish();
