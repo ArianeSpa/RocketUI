@@ -3,7 +3,7 @@ import { get } from 'lodash';
 import { CSSProperties } from 'styled-components';
 
 // === Import : LOCAL
-import { PaletteThemeKeys, Theme } from '../../theming';
+import { PaletteThemeKeys, Theme } from '../../../theming';
 
 export type GetColorProps = {
   theme?: Theme;
@@ -15,7 +15,7 @@ export type GetColorProps = {
    * [theme customization guide](@todo set link).
    * @default currentColor
    */
-  color: PaletteThemeKeys | CSSProperties['color'];
+  color?: PaletteThemeKeys | CSSProperties['color'];
 };
 
 export const getColor = ({ color, theme }: GetColorProps) => {
