@@ -1,6 +1,6 @@
 // === Import : LOCAL
-import { Theme } from '../../../theming';
 import { convertGutterSize } from '../_utils';
+import { Theme } from '../../../theming';
 
 export type GetGuttersProps = {
   p?: number;

@@ -1,7 +1,7 @@
 import { GutterUnitEnum } from '../../../../theming';
 import { convertGutterSize } from './convert-gutter-size';
 
-describe('convertGutterSize', () => {
+describe('convert-gutter-size', () => {
   test('return without gutter param', () => {
     const gutter = convertGutterSize({ value: 2 });
     expect(gutter).toBe('0.5em');

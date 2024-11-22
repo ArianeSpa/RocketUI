@@ -1,6 +1,6 @@
 import { getGutters } from './get-gutters';
 
-describe('get-gutters / getGutterValue', () => {
+describe('get-gutters', () => {
   test('return default', () => {
     const gutter = getGutters({});
     expect(gutter).toBe('');
