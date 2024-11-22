@@ -1,5 +1,6 @@
 export type GetConfigOptionsProps =
   | 'getBackground'
+  | 'getBorder'
   | 'getColor'
   | 'getEllipsis'
   | 'getFlex'
@@ -17,6 +18,8 @@ export const getConfig = (props: GetConfigProps) => {
     switch (option) {
       case 'getBackground':
         return [...list, 'backgroundColor', 'backgroundImage'];
+      case 'getBorder':
+        return [...list, 'borderColor', 'borderWidth', 'borderStyle'];
       case 'getColor':
         return [...list, 'color'];
       case 'getEllipsis':

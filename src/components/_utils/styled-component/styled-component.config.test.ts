@@ -19,6 +19,12 @@ describe('styled-component.config: getConfig', () => {
     expect(backgroundColor).toBe(false);
   });
 
+  test('return with getBorder option', () => {
+    const { shouldForwardProp } = getConfig({ options: ['getBorder'] });
+    const borderColor = shouldForwardProp('borderColor');
+    expect(borderColor).toBe(false);
+  });
+
   test('return with getColor option', () => {
     const { shouldForwardProp } = getConfig({ options: ['getColor'] });
     const color = shouldForwardProp('color');
