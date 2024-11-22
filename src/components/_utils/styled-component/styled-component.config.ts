@@ -6,7 +6,9 @@ export type GetConfigOptionsProps =
   | 'getFlex'
   | 'getFont'
   | 'getGutters'
-  | 'getHeightWidth';
+  | 'getHeightWidth'
+  | 'getRadius'
+  | 'getShadow';
 type GetConfigProps = {
   options?: GetConfigOptionsProps[];
   keys?: string[];
@@ -68,7 +70,10 @@ export const getConfig = (props: GetConfigProps) => {
         ];
       case 'getHeightWidth':
         return [...list, 'height', 'fullHeight', 'width', 'fullWidth'];
-
+      case 'getRadius':
+        return [...list, 'radius'];
+      case 'getShadow':
+        return [...list, 'boxShadow', 'elevation'];
       default:
         return [...list];
     }
