@@ -9,8 +9,6 @@ const meta = {
   component: Flex,
   tags: ['autodocs'],
   argTypes: {
-    backgroundColor: { control: 'color' },
-    backgroundImage: { control: 'color' },
     alignItems: {
       control: 'radio',
       options: ['start', 'center', 'end', 'stretch'],
@@ -43,8 +41,6 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    backgroundColor: '#F8A9D5',
-    backgroundImage: `radial-gradient(circle, rgba(43, 43, 61, 0.2), rgba(43, 43, 61, 0.3), rgba(43, 43, 61, 0.4), rgba(43, 43, 61, 0.5), rgba(43, 43, 61, 0.6))`,
     alignItems: 'start',
     flexDirection: 'column',
     justifyContent: 'center',
