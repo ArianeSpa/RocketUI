@@ -6,4 +6,5 @@
  * An atom can be, for example, a logo, a typo, html tags...
  */
 
+export * from './Flex';
 export * from './Typo';

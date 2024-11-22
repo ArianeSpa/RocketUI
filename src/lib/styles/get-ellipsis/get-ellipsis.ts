@@ -11,5 +11,9 @@ export type GetEllipsisProps = {
 };
 export const getEllipsis = ({ noWrap }: GetEllipsisProps) => {
   if (!noWrap) return;
-  return 'text-overflow: ellipsis; white-space: nowrap; overflow: hidden;';
+  return [
+    'text-overflow: ellipsis;',
+    'white-space: nowrap;',
+    'overflow: hidden;',
+  ];
 };

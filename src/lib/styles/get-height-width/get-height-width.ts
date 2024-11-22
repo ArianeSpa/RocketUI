@@ -33,5 +33,5 @@ export const getHeightWidth = (props: GetHeightWidthProps) => {
   const widthStyle =
     fullWidth || width ? `width: ${fullWidth ? '100%' : width};` : undefined;
 
-  return [heightStyle, widthStyle].filter(Boolean).join(' ');
+  return [heightStyle, widthStyle].filter(Boolean);
 };

@@ -16,9 +16,15 @@ describe('get-font / getFontDefinition', () => {
       fontWeight: 'fontWeight',
       lineHeight: 'lineHeight',
     });
-    expect(defaultFont).toBe(
-      'font-family: fontFamily; font-size: fontSize; font-stretch: fontStretch; font-style: fontStyle; font-variant: fontVariant; font-weight: fontWeight; line-height: lineHeight;'
-    );
+    expect(defaultFont).toStrictEqual([
+      'font-family: fontFamily;',
+      'font-size: fontSize;',
+      'font-stretch: fontStretch;',
+      'font-style: fontStyle;',
+      'font-variant: fontVariant;',
+      'font-weight: fontWeight;',
+      'line-height: lineHeight;',
+    ]);
   });
 });
 
@@ -37,12 +43,12 @@ describe('get-font / getFont', () => {
 
   test('return font with theme and default variant', () => {
     const font = getFont({ theme: mockTheme });
-    expect(font).toBe('font-family: bodyFontFamily;');
+    expect(font).toStrictEqual(['font-family: bodyFontFamily;']);
   });
 
   test('return font with theme and variant', () => {
     const font = getFont({ theme: mockTheme, variant: 'h1' });
-    expect(font).toBe('font-weight: 800;');
+    expect(font).toStrictEqual(['font-weight: 800;']);
   });
 
   test('return font with theme and not existing variant', () => {
@@ -61,6 +67,6 @@ describe('get-font / getFont', () => {
       variant: 'h1',
       fontSize: '16px',
     });
-    expect(font).toBe('font-size: 16px; font-weight: 800;');
+    expect(font).toStrictEqual(['font-size: 16px;', 'font-weight: 800;']);
   });
 });

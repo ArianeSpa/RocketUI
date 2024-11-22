@@ -1,5 +1,6 @@
 // === Import : LOCAL
-import { GutterUnitEnum, Theme } from '../../../theming';
+import { convertGutterSize } from '../_utils';
+import { Theme } from '../../../theming';
 
 export type GetGuttersProps = {
   p?: number;
@@ -22,43 +23,26 @@ export const getGutters = ({ theme, ...gutters }: GetGuttersProps) => {
   const { p, px, py, pt, pr, pb, pl } = gutters;
   const { m, mx, my, mt, mr, mb, ml } = gutters;
 
-  const { gutter } = theme || {};
+  const getStyle = (style: string, value?: number) =>
+    value
+      ? `${style}: ${convertGutterSize({ value, gutter: theme?.gutter })};`
+      : undefined;
 
-  const getGutterSize = (value: number) => {
-    if (!gutter) return `${value * 0.25}em`;
-    const { unit, size } = gutter;
-    switch (unit) {
-      case GutterUnitEnum.PX:
-        return `${value * (size ?? 4)}px`;
-      case GutterUnitEnum.EM:
-      default:
-        return `${value * (size ?? 0.25)}em`;
-    }
-  };
-
-  const pTop = py ?? pt;
-  const pRight = px ?? pr;
-  const pBottom = py ?? pb;
-  const pLeft = px ?? pl;
   const paddingStyles = [
-    p ? `padding: ${getGutterSize(p)};` : undefined,
-    pTop ? `padding-top: ${getGutterSize(pTop)};` : undefined,
-    pRight ? `padding-right: ${getGutterSize(pRight)};` : undefined,
-    pBottom ? `padding-bottom: ${getGutterSize(pBottom)};` : undefined,
-    pLeft ? `padding-left: ${getGutterSize(pLeft)};` : undefined,
+    getStyle('padding', p),
+    getStyle('padding-top', py ?? pt),
+    getStyle('padding-right', px ?? pr),
+    getStyle('padding-bottom', py ?? pb),
+    getStyle('padding-left', px ?? pl),
   ];
 
-  const mTop = my ?? mt;
-  const mRight = mx ?? mr;
-  const mBottom = my ?? mb;
-  const mLeft = mx ?? ml;
   const marginStyles = [
-    m ? `margin: ${getGutterSize(m)};` : undefined,
-    mTop ? `margin-top: ${getGutterSize(mTop)};` : undefined,
-    mRight ? `margin-right: ${getGutterSize(mRight)};` : undefined,
-    mBottom ? `margin-bottom: ${getGutterSize(mBottom)};` : undefined,
-    mLeft ? `margin-left: ${getGutterSize(mLeft)};` : undefined,
+    getStyle('margin', m),
+    getStyle('margin-top', my ?? mt),
+    getStyle('margin-right', mx ?? mr),
+    getStyle('margin-bottom', my ?? mb),
+    getStyle('margin-left', mx ?? ml),
   ];
 
-  return [...paddingStyles, ...marginStyles].filter(Boolean).join(' ');
+  return [...paddingStyles, ...marginStyles].filter(Boolean);
 };

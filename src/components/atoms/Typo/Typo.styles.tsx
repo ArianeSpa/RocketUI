@@ -2,6 +2,8 @@
 import styled from 'styled-components';
 
 // === Import : LOCAL
+import { StyledTypoProps } from './Typo.types';
+import { getConfig } from '../../_utils';
 import {
   getColor,
   getEllipsis,
@@ -9,8 +11,6 @@ import {
   getGutters,
   getHeightWidth,
 } from '../../../lib';
-import { StyledTypoProps } from './Typo.types';
-import { getConfig } from '../../_utils';
 
 export const StyledTypo = styled.span.withConfig(
   getConfig({

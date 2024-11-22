@@ -24,7 +24,7 @@ const getFontDefinition = (props: FontDefinitionProps) => {
   if (fontWeight) fontDefinition.push(`font-weight: ${fontWeight};`);
   if (lineHeight) fontDefinition.push(`line-height: ${lineHeight};`);
 
-  return fontDefinition.join(' ');
+  return fontDefinition;
 };
 
 export type GetFontProps = {
