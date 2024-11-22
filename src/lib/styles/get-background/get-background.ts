@@ -16,7 +16,7 @@ export const getBackground = ({
   backgroundImage,
   theme,
 }: GetBackgroundProps) => {
-  const bgColorStyle = `background-color: ${get(theme?.palette, backgroundColor, 'inherit')};`;
+  const bgColorStyle = `background-color: ${get(theme?.palette, backgroundColor, 'transparent')};`;
   const bgImageStyle = `background-image: ${get(theme?.gradients, backgroundImage, 'unset')};`;
 
   return [bgColorStyle, bgImageStyle];

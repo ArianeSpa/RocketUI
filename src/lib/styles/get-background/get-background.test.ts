@@ -4,7 +4,7 @@ describe('get-background', () => {
   test('return default background', () => {
     const defaultBackground = getBackground({});
     expect(defaultBackground).toStrictEqual([
-      'background-color: inherit;',
+      'background-color: transparent;',
       'background-image: unset;',
     ]);
   });
