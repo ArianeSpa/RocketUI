@@ -37,12 +37,3 @@ export interface StyledTypoProps
 
   display?: CSSProperties['display'];
 }
-
-export interface TypoProps extends Omit<StyledTypoProps, 'theme'> {
-  /**
-   * The content of the component.
-   * By default, Typo is a <span> tag, it means children should be phrasing content.
-   * You can use the prop `component` to change the default tag (exemple 'div').
-   */
-  children?: React.ReactNode;
-}
