@@ -16,8 +16,13 @@ export const getBackground = ({
   backgroundImage,
   theme,
 }: GetBackgroundProps) => {
-  const bgColorStyle = `background-color: ${get(theme?.palette, backgroundColor, 'transparent')};`;
-  const bgImageStyle = `background-image: ${get(theme?.gradients, backgroundImage, 'unset')};`;
+  const styles = [];
+  styles.push(
+    `background-color: ${backgroundColor ? get(theme?.palette, backgroundColor, backgroundColor) : 'transparent'};`
+  );
+  styles.push(
+    `background-image: ${backgroundImage ? get(theme?.gradients, backgroundImage, backgroundImage) : 'unset'};`
+  );
 
-  return [bgColorStyle, bgImageStyle];
+  return styles;
 };
