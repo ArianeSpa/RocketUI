@@ -8,8 +8,10 @@ describe('get-ellipsis', () => {
 
   test('return no wrap styles', () => {
     const noWrapStyle = getEllipsis({ noWrap: true });
-    expect(noWrapStyle).toBe(
-      'text-overflow: ellipsis; white-space: nowrap; overflow: hidden;'
-    );
+    expect(noWrapStyle).toStrictEqual([
+      'text-overflow: ellipsis;',
+      'white-space: nowrap;',
+      'overflow: hidden;',
+    ]);
   });
 });

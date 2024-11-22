@@ -1,2 +1,2 @@
-export * from './styles/_index';
+export * from './styles';
 export * from './types/_index';

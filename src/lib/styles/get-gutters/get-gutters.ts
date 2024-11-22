@@ -44,5 +44,5 @@ export const getGutters = ({ theme, ...gutters }: GetGuttersProps) => {
     getStyle('margin-left', mx ?? ml),
   ];
 
-  return [...paddingStyles, ...marginStyles].filter(Boolean).join(' ');
+  return [...paddingStyles, ...marginStyles].filter(Boolean);
 };
