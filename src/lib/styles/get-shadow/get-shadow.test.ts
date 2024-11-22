@@ -1,4 +1,4 @@
-import { getShadow } from './get-shadows';
+import { getShadow } from './get-shadow';
 
 const mockTheme = {
   shadows: { 1: '0px 32px 64px 0px rgba(0, 0, 0, 0.24)' },

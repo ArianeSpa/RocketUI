@@ -7,4 +7,4 @@ export * from './get-font';
 export * from './get-gutters';
 export * from './get-height-width';
 export * from './get-radius';
-export * from './get-shadows';
+export * from './get-shadow';
