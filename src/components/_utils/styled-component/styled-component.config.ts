@@ -1,6 +1,8 @@
 export type GetConfigOptionsProps =
+  | 'getBackground'
   | 'getColor'
   | 'getEllipsis'
+  | 'getFlex'
   | 'getFont'
   | 'getGutters'
   | 'getHeightWidth';
@@ -13,10 +15,36 @@ export const getConfig = (props: GetConfigProps) => {
   const { keys = [], options = [] } = props;
   const optionKeys = options?.reduce((list, option) => {
     switch (option) {
+      case 'getBackground':
+        return [...list, 'backgroundColor', 'backgroundImage'];
       case 'getColor':
         return [...list, 'color'];
       case 'getEllipsis':
         return [...list, 'noWrap'];
+      case 'getFlex':
+        return [
+          ...list,
+          'alignItems',
+          'flexDirection',
+          'flexWrap',
+          'flexGrow',
+          'flexShrink',
+          'gap',
+          'justifyContent',
+        ];
+      case 'getFont':
+        return [
+          ...list,
+          'variant',
+          'fontFamily',
+          'fontSize',
+          'fontStretch',
+          'fontStyle',
+          'fontVariant',
+          'fontWeight',
+          'lineHeight',
+        ];
+
       case 'getGutters':
         return [
           ...list,
@@ -37,18 +65,6 @@ export const getConfig = (props: GetConfigProps) => {
         ];
       case 'getHeightWidth':
         return [...list, 'height', 'fullHeight', 'width', 'fullWidth'];
-      case 'getFont':
-        return [
-          ...list,
-          'variant',
-          'fontFamily',
-          'fontSize',
-          'fontStretch',
-          'fontStyle',
-          'fontVariant',
-          'fontWeight',
-          'lineHeight',
-        ];
 
       default:
         return [...list];

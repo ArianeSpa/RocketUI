@@ -13,10 +13,10 @@ describe('styled-component.config: getConfig', () => {
     expect(padding).toBe(false);
   });
 
-  test('return with getGutters option', () => {
-    const { shouldForwardProp } = getConfig({ options: ['getGutters'] });
-    const padding = shouldForwardProp('p');
-    expect(padding).toBe(false);
+  test('return with getBackground option', () => {
+    const { shouldForwardProp } = getConfig({ options: ['getBackground'] });
+    const backgroundColor = shouldForwardProp('backgroundColor');
+    expect(backgroundColor).toBe(false);
   });
 
   test('return with getColor option', () => {
@@ -31,16 +31,28 @@ describe('styled-component.config: getConfig', () => {
     expect(noWrap).toBe(false);
   });
 
-  test('return with getHeightWidth option', () => {
-    const { shouldForwardProp } = getConfig({ options: ['getHeightWidth'] });
-    const fullWidth = shouldForwardProp('fullWidth');
-    expect(fullWidth).toBe(false);
+  test('return with getFlex option', () => {
+    const { shouldForwardProp } = getConfig({ options: ['getFlex'] });
+    const flexWrap = shouldForwardProp('flexWrap');
+    expect(flexWrap).toBe(false);
   });
 
   test('return with getFont option', () => {
     const { shouldForwardProp } = getConfig({ options: ['getFont'] });
     const fontSize = shouldForwardProp('fontSize');
     expect(fontSize).toBe(false);
+  });
+
+  test('return with getGutters option', () => {
+    const { shouldForwardProp } = getConfig({ options: ['getGutters'] });
+    const padding = shouldForwardProp('p');
+    expect(padding).toBe(false);
+  });
+
+  test('return with getHeightWidth option', () => {
+    const { shouldForwardProp } = getConfig({ options: ['getHeightWidth'] });
+    const fullWidth = shouldForwardProp('fullWidth');
+    expect(fullWidth).toBe(false);
   });
 
   test('return with getFont option', () => {
