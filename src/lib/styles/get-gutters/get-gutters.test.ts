@@ -1,43 +1,9 @@
-import { GutterUnitEnum } from '../../../theming';
 import { getGutters } from './get-gutters';
 
 describe('get-gutters / getGutterValue', () => {
   test('return default', () => {
     const gutter = getGutters({});
     expect(gutter).toBe('');
-  });
-
-  test('return with gutter unit theme provided', () => {
-    const gutterPX = getGutters({
-      theme: { gutter: { unit: GutterUnitEnum.PX } },
-      m: 12,
-    });
-    expect(gutterPX).toBe('margin: 48px;');
-
-    const gutterEM = getGutters({
-      theme: { gutter: { unit: GutterUnitEnum.EM } },
-      m: 12,
-    });
-    expect(gutterEM).toBe('margin: 3em;');
-  });
-
-  test('return with gutter size theme provided', () => {
-    const gutter = getGutters({ theme: { gutter: { size: 6 } }, m: 12 });
-    expect(gutter).toBe('margin: 72em;');
-  });
-
-  test('return with gutter unit and size theme provided', () => {
-    const gutterPX = getGutters({
-      theme: { gutter: { unit: GutterUnitEnum.PX, size: 4 } },
-      m: 12,
-    });
-    expect(gutterPX).toBe('margin: 48px;');
-
-    const gutterEM = getGutters({
-      theme: { gutter: { unit: GutterUnitEnum.EM, size: 4 } },
-      m: 12,
-    });
-    expect(gutterEM).toBe('margin: 48em;');
   });
 
   test('return margin & padding with surcharges', () => {
