@@ -20,8 +20,6 @@ describe('<Flex />', () => {
       'overflow',
       'align-items',
       'box-sizing',
-      'background-color',
-      'background-image',
       'flex-direction',
       'justify-content',
     ]);
@@ -30,8 +28,6 @@ describe('<Flex />', () => {
     expect(overflow).toBe('hidden');
     expect(styles['align-items']).toBe('center');
     expect(styles['box-sizing']).toBe('border-box');
-    expect(styles['background-color']).toBe('transparent');
-    expect(styles['background-image']).toBeUndefined();
     expect(styles['flex-direction']).toBe('column');
     expect(styles['justify-content']).toBe('center');
   });

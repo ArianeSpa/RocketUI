@@ -1,7 +1,8 @@
 {
   "name": "react-rocket-ui",
-  "version": "1.1.0",
+  "version": "1.2.1",
   "author": "",
+  "license": "MIT",
   "description": "Rocket UI library built from styled-components",
   "homepage": "https://github.com/ArianeSpa/RocketUI#readme",
   "bugs": {

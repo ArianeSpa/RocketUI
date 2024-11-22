@@ -1,11 +1,14 @@
 export type GetConfigOptionsProps =
   | 'getBackground'
+  | 'getBorder'
   | 'getColor'
   | 'getEllipsis'
   | 'getFlex'
   | 'getFont'
   | 'getGutters'
-  | 'getHeightWidth';
+  | 'getHeightWidth'
+  | 'getRadius'
+  | 'getShadow';
 type GetConfigProps = {
   options?: GetConfigOptionsProps[];
   keys?: string[];
@@ -17,6 +20,8 @@ export const getConfig = (props: GetConfigProps) => {
     switch (option) {
       case 'getBackground':
         return [...list, 'backgroundColor', 'backgroundImage'];
+      case 'getBorder':
+        return [...list, 'borderColor', 'borderWidth', 'borderStyle'];
       case 'getColor':
         return [...list, 'color'];
       case 'getEllipsis':
@@ -65,7 +70,10 @@ export const getConfig = (props: GetConfigProps) => {
         ];
       case 'getHeightWidth':
         return [...list, 'height', 'fullHeight', 'width', 'fullWidth'];
-
+      case 'getRadius':
+        return [...list, 'radius'];
+      case 'getShadow':
+        return [...list, 'boxShadow', 'elevation'];
       default:
         return [...list];
     }

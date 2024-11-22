@@ -8,4 +8,23 @@ describe('get-background', () => {
       'background-image: unset;',
     ]);
   });
+
+  test('return background color', () => {
+    const defaultBackground = getBackground({ backgroundColor: '#000000' });
+    expect(defaultBackground).toStrictEqual([
+      'background-color: #000000;',
+      'background-image: unset;',
+    ]);
+  });
+
+  test('return background image', () => {
+    const defaultBackground = getBackground({
+      backgroundImage:
+        'radial-gradient(circle, rgba(43, 43, 61, 0.2),  rgba(43, 43, 61, 0.6))',
+    });
+    expect(defaultBackground).toStrictEqual([
+      'background-color: transparent;',
+      'background-image: radial-gradient(circle, rgba(43, 43, 61, 0.2),  rgba(43, 43, 61, 0.6));',
+    ]);
+  });
 });

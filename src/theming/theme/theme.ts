@@ -2,13 +2,16 @@ import { defaultFonts, FontThemeProps } from '../fonts/fonts';
 import { defaultGradients, GradientThemeKeys } from '../gradients/gradients';
 import { defaultGutters, GutterThemeProps } from '../gutters/gutters';
 import { defaultPalette, PaletteThemeKeys } from '../palette/palette';
+import { defaultRadius, RadiusThemeKeys } from '../radius/radius';
+import { defaultShadows, ShadowThemeKeys } from '../shadows/shadows';
 
 export type ThemeProps = {
   fonts?: FontThemeProps;
   gradients?: GradientThemeKeys;
   gutter?: GutterThemeProps;
   palette?: PaletteThemeKeys;
-  roundness?: number | string;
+  radius?: RadiusThemeKeys;
+  shadows?: ShadowThemeKeys;
 };
 
 export const defaultTheme: ThemeProps = {
@@ -16,7 +19,8 @@ export const defaultTheme: ThemeProps = {
   gradients: defaultGradients,
   gutter: defaultGutters,
   palette: defaultPalette,
-  roundness: 4,
+  radius: defaultRadius,
+  shadows: defaultShadows,
 };
 
 export type Theme = typeof defaultTheme;

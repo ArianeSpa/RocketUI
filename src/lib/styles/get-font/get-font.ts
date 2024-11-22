@@ -44,9 +44,7 @@ export const getFont = ({
   theme,
   ...fontProps
 }: GetFontProps) => {
-  const fontVariantDefinition = variant
-    ? get(theme?.fonts, variant)
-    : undefined;
+  const fontVariantDefinition = get(theme?.fonts, variant);
   const mergedStyle = merge(fontVariantDefinition, fontProps);
   if (Object.keys(mergedStyle).length === 0) return '';
   return getFontDefinition(mergedStyle);

@@ -7,4 +7,5 @@
  */
 
 export * from './Flex';
+export * from './Paper';
 export * from './Typo';
