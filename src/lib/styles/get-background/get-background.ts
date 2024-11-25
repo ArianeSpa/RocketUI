@@ -20,9 +20,10 @@ export const getBackground = ({
   styles.push(
     `background-color: ${backgroundColor ? get(theme?.palette, backgroundColor, backgroundColor) : 'transparent'};`
   );
-  styles.push(
-    `background-image: ${backgroundImage ? get(theme?.gradients, backgroundImage, backgroundImage) : 'unset'};`
-  );
+  if (backgroundImage)
+    styles.push(
+      `background-image: ${get(theme?.gradients, backgroundImage, backgroundImage)};`
+    );
 
   return styles;
 };

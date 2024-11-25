@@ -27,7 +27,6 @@ type Story = StoryObj<typeof meta>;
 
 export const NoElevationBorderSquareBackgroundImage: Story = {
   args: {
-    children: 'Elevation 0, border, square, background image',
     backgroundImage: 'darkGradient',
     borderColor: '#9C184F',
     radius: 'square',

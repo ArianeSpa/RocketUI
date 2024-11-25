@@ -4,6 +4,7 @@ import { HTMLAttributes } from 'react';
 // === Import : LOCAL
 import { Theme } from '../../../theming';
 import {
+  GetBorderProps,
   GetGuttersProps,
   GetHeightWidthProps,
   GetBackgroundProps,
@@ -11,7 +12,6 @@ import {
   GetRadiusProps,
   GetShadowProps,
 } from '../../../lib';
-import { GetBorderProps } from '../../../lib/styles/get-border/get-border';
 
 export interface StyledPaperProps
   extends Omit<HTMLAttributes<HTMLBaseElement>, 'color'>,

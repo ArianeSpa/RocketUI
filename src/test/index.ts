@@ -1,6 +1,7 @@
 // === Import : NPM
 import { ReactElement } from 'react';
 import { render as testRender, RenderOptions } from '@testing-library/react';
+import '@testing-library/jest-dom';
 
 export const render = (ui: ReactElement, options?: RenderOptions) =>
   testRender(ui, options);
