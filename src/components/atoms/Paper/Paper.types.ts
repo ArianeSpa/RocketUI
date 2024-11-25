@@ -6,13 +6,21 @@ import { Theme } from '../../../theming';
 import {
   GetGuttersProps,
   GetHeightWidthProps,
-  GetFlexProps,
+  GetBackgroundProps,
+  GetColorProps,
+  GetRadiusProps,
+  GetShadowProps,
 } from '../../../lib';
+import { GetBorderProps } from '../../../lib/styles/get-border/get-border';
 
-export interface StyledFlexProps
+export interface StyledPaperProps
   extends Omit<HTMLAttributes<HTMLBaseElement>, 'color'>,
+    GetBackgroundProps,
+    GetBorderProps,
+    GetColorProps,
     GetGuttersProps,
     GetHeightWidthProps,
-    GetFlexProps {
+    GetRadiusProps,
+    GetShadowProps {
   theme?: Theme;
 }

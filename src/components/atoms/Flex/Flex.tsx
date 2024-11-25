@@ -1,2 +1,2 @@
 export { StyledFlex as Flex } from './Flex.styles';
-export type { FlexProps } from './Flex.types';
+export type { StyledFlexProps as FlexProps } from './Flex.types';

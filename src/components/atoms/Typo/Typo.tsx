@@ -1,2 +1,2 @@
 export { StyledTypo as Typo } from './Typo.styles';
-export type { TypoProps } from './Typo.types';
+export type { StyledTypoProps as TypoProps } from './Typo.types';
