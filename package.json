@@ -56,6 +56,8 @@
     "@storybook/react": "^8.4.2",
     "@storybook/react-vite": "^8.4.2",
     "@storybook/test": "^8.4.2",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.0.1",
     "@types/jest": "^29.5.14",
     "@types/lodash": "^4.17.13",
     "@types/react": "^18.3.12",
@@ -100,7 +102,6 @@
     "README.md"
   ],
   "dependencies": {
-    "@testing-library/react": "^16.0.1",
     "lodash": "^4.17.21"
   }
 }

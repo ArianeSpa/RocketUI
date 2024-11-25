@@ -7,5 +7,6 @@
  */
 
 export * from './Flex';
+export * from './LinkText';
 export * from './Paper';
 export * from './Typo';
